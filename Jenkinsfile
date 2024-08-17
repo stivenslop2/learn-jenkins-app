@@ -11,7 +11,7 @@ pipeline {
 					}
           steps {
             sh '''
-							npm cache clean -force
+							sudo chown -R 989:986 "/.npm"
 							ls -la
 							node --version
 							npm --version
