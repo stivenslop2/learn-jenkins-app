@@ -11,8 +11,13 @@ pipeline {
 					}
           steps {
             sh '''
+							whoami
+							ls -la
+							node --version
 							npm --version
-							whoami		
+							npm ci
+							npm run build
+							ls -la								
 						'''
           }
         }
