@@ -5,9 +5,8 @@ pipeline {
         stage('Build') {
 					agent {
 						docker {
-							image 'node:20.16.0-alpine'
+							image 'node:18.20.4-alpine'
 							reuseNode true
-							args '-u root --entrypoint /bin/sh -c "addgroup -g 986 jenkins && adduser -u 989 -G jenkins"'
 						}
 					}
           steps {
