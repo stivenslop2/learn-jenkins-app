@@ -2,6 +2,14 @@ pipeline {
     agent any
 
     stages {
+				stage('Pre-Build') {
+          steps {
+            sh '''
+							echo "PERMISSIONS"
+							chown -R 989:986 "/.npm"
+						'''
+          }
+        }
         stage('Build') {
 					agent {
 						docker {
