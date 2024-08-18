@@ -11,12 +11,12 @@ pipeline {
 					}
           steps {
             sh '''
-							echo "$(ls -la /)"
 							ls -la
+							npm cache clean --force 
+							sudo chown -R 989:986 "~/.npm"
 							node --version
 							npm --version
 							npm install
-							npm run build
 							ls -la
 						'''
           }
