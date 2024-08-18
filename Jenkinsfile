@@ -11,12 +11,17 @@ pipeline {
 					}
           steps {
             sh '''
+							npm cache clean --force
 							ls -la
 							node --version
 							npm --version
+							echo "0"
 							whoami
+							echo "1"
               ls -la /var/lib/jenkins/workspace/React
+							echo "2"
               npm config get cache
+							
 						'''
           }
         }
