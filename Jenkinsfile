@@ -4,7 +4,6 @@ pipeline {
     stages {
 				stage('Pre-Build') {
           steps {
-						cleanWs()
             sh '''
 							echo "PERMISSIONS"
 						'''
