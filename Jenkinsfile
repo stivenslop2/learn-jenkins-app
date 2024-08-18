@@ -6,11 +6,9 @@ pipeline {
 					agent {
 						docker {
 							image 'node:18-alpine'
-							reuseNode true
 						}
 					}
           steps {
-						cleanWs()
             sh '''
 							echo "El directorio de caché de npm es: $(npm config get cache)"				
 							ls -la
