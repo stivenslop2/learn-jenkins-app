@@ -12,7 +12,7 @@ pipeline {
           steps {
             sh '''
 							echo "El directorio de caché de npm es: $(npm config get cache)"
-							sudo chown -R 989:986 "/.npm"					
+							chown -R 989:986 "/.npm"					
 							ls -la
 							node --version
 							npm --version
