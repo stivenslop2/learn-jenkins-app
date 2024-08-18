@@ -7,7 +7,7 @@ pipeline {
 						docker {
 							image 'node:20.16.0-alpine'
 							reuseNode true
-							args 'addgroup -g 986 jenkins && adduser -u 989 -G jenkins'
+							args '-u root --entrypoint /bin/sh -c "addgroup -g 986 jenkins && adduser -u 989 -G jenkins"'
 						}
 					}
           steps {
