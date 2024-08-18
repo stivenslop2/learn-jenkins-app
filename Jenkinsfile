@@ -11,13 +11,21 @@ pipeline {
 					}
           steps {
             sh '''
-							whoami
-							ls -la
-							node --version
-							npm --version
 							npm ci
-							npm run build
-							ls -la								
+							npm run build							
+						'''
+          }
+        }
+				stage('Test') {
+					agent {
+						docker {
+							image 'node:18.20.4-alpine'
+							reuseNode true
+						}
+					}
+          steps {
+            sh '''
+							npm run test					
 						'''
           }
         }
