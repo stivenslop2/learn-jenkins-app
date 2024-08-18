@@ -10,9 +10,9 @@ pipeline {
 						}
 					}
           steps {
+						cleanWs()
             sh '''
-							echo "El directorio de caché de npm es: $(npm config get cache)"
-							chown -R 989:986 "/.npm"					
+							echo "El directorio de caché de npm es: $(npm config get cache)"				
 							ls -la
 							node --version
 							npm --version
