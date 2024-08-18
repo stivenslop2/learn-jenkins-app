@@ -7,7 +7,6 @@ pipeline {
 						cleanWs()
             sh '''
 							echo "PERMISSIONS"
-							chown -R 989:986 "/.npm"
 						'''
           }
         }
