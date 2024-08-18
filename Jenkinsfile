@@ -4,6 +4,7 @@ pipeline {
     stages {
 				stage('Pre-Build') {
           steps {
+						cleanWs()
             sh '''
 							echo "PERMISSIONS"
 							chown -R 989:986 "/.npm"
