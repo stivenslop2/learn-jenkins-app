@@ -7,6 +7,7 @@ pipeline {
 						docker {
 							image 'node:20.16.0-alpine'
 							reuseNode true
+							args '-u 1000:1000'
 						}
 					}
           steps {
@@ -17,8 +18,6 @@ pipeline {
 							npm --version
 							echo "0"
 							whoami
-							echo "1"
-              ls -la /var/lib/jenkins/workspace/React
 							echo "2"
               npm config get cache
 							
