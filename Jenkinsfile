@@ -12,12 +12,13 @@ pipeline {
           steps {
             sh '''
 						  echo "CACHE"
-							npm config get cache						
+							echo "El directorio de caché de npm es: $(npm config get cache)"					
 							ls -la
 							node --version
 							npm --version
-							sudo npm ci
-							sudo npm run build
+							rm -rf node_modules
+							npm install
+							npm run build
 							ls -la
 						'''
           }
