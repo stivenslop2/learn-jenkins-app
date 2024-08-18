@@ -2,13 +2,6 @@ pipeline {
     agent any
 
     stages {
-				stage('Pre-Build') {
-          steps {
-            sh '''
-							echo "PERMISSIONS"
-						'''
-          }
-        }
         stage('Build') {
 					agent {
 						docker {
@@ -21,8 +14,9 @@ pipeline {
 							ls -la
 							node --version
 							npm --version
-							npm ci
-							ls -la
+							whoami
+              ls -la /var/lib/jenkins/workspace/React
+              npm config get cache
 						'''
           }
         }
